@@ -1,1 +1,1 @@
-# TETRIS-GAME
+# Tetris Game
