@@ -50,15 +50,6 @@ private:
     Tetromino currentPiece;
     Point position;
     termios oldt;
-
-    void SetColor(int color) {
-        std::cout << "\033[38;5;" << color << "m";
-    }
-
-    void ResetColor() {
-        std::cout << "\033[0m";
-    }
-
     void InitializeBoard() {
         for (int i = 0; i < boardHeight; i++) {
             for (int j = 0; j < boardWidth; j++) {
@@ -237,13 +228,11 @@ public:
         std::cout << ANSI_COLOR_WHITE;
         for (int x = 0; x < boardWidth + 2; ++x) std::cout << BLOCK;
         std::cout << ANSI_COLOR_RESET << std::endl;
-        //std::cout << "______________________" << std::endl;
         for (int i = 0; i < boardHeight; i++) {
             std::cout << BLOCK;
             for (int j = 0; j < boardWidth; j++) {
                 if (board[i][j] != ' ') {
-                   // SetColor(board[i][j] - '0');
-                    if(board[i][j]=='I'){
+                  if(board[i][j]=='I'){
                         std::cout << ANSI_COLOR_BLUE;   
                     }
                     else if(board[i][j]=='O'){
@@ -266,8 +255,7 @@ public:
                     }
                     std::cout << BLOCK;
                     std::cout << ANSI_COLOR_RESET ;
-                    //ResetColor();
-                    //std::cout << " ";
+
                 } else {
                     std::cout << board[i][j] << " ";
                 }
@@ -277,7 +265,7 @@ public:
         }
         for (int x = 0; x < boardWidth + 2; ++x) std::cout << BLOCK;
         std::cout << ANSI_COLOR_RESET << std::endl;
-        //std::cout << "______________________" << std::endl;
+
     }
 
     void Input() {
@@ -309,9 +297,7 @@ public:
                     position.y++;
                 }
                 position.y--;  // Move back one step before placing
-                // if(position.y==1){
-                //     gameOver=true;
-                // }
+
                 PlacePiece();
                 RemoveFullLines();
             } else {  // Escape key (exit game)
@@ -360,23 +346,14 @@ public:
         cout << "Controls: '->' - Right | '<-' - LEFT | '↑' - Rotate | '↓' - SoftFall" << endl;
         cout << "Controls: 'SpaceBar' - HardFall | 'AnyOtherKey - Quit'"<<endl;
         cout << "\033[1;35m--------------------------------------\033[0m" << endl;
-        // cout << "\nPress Enter to continue...";
-        // cin.ignore();
-
         int choice;
         cout << "\nSelect Difficulty Level:\n";
         cout << " 1. Easy   (Slow speed)\n";
         cout << " 2. Medium (Normal speed)\n";
         cout << " 3. Hard   (Fast speed)\n";
         cout << "Enter choice (1-3): ";
-        // std::cin >> choice;
+
         choice = getchar() - '0';  // Convert char to int
-        //cin.ignore();
-        // Clear the input buffer to avoid issues with following inputs
-       // while (getchar() != '\n');
-    
-        // cout << "\nPress Enter to continue...";
-        // cin.ignore();
 
         switch (choice) {
             case 1: speed = 400000; break; // Slow speed
