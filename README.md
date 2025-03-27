@@ -58,36 +58,7 @@ The goal of the game is to control the falling tetrominoes, rotate them to fit i
 
 ## Display of the Game 
 The game is displayed in the console using ASCII characters:
-![img alt](https://www.google.com/url?sa=i&url=https%3A%2F%2Fexplorecams.com%2Fphotos%2FLEFEikw0MR%3Fmodel%3Dnikon-d3100&psig=AOvVaw1w6kkKGUKTN20dCJsWV4ZG&ust=1743144078355000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPj3we3TqYwDFQAAAAAdAAAAABAI)
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓                                      ▓
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-
-Score: 00
-Highest score : 0
+![img alt](https://github.com/Rucheer03/TETRIS-GAME/blob/main/tetris.jpeg)
 
 ## Key Features
 
