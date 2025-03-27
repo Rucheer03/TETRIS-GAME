@@ -85,19 +85,40 @@ The game is displayed in the console using ASCII characters:
   
 ### 3. **Class: Tetris**
 - **Attributes**:
-  - `char board[20][10]`: The game grid, with dimensions 20x10.
-  - `Tetromino currentPiece`: The current falling tetromino.
-  - `int score`: The player's score.
-  - `bool gameOver`: A flag to indicate whether the game has ended.
+  1. `char board[20][10]`: 
+  - The game grid, with dimensions 20x10.
+  - Each element in this grid  can hold a character to represent either an empty space (' ') or a part of a Tetromino (a letter like 'I', 'O', etc.).
+  2. `Tetromino currentPiece`: 
+  - The current falling tetromino.
+  - This holds the current piece that is falling. A Tetromino is an object that represents the shape, position, and symbol of the current falling piece.
+  3. `int score`:
+  - This is an integer variable that tracks the player's score.
+  - The score increases when a line is completed and cleared from the game grid. The player earns points for clearing rows of blocks.
+  4. `bool gameOver`: 
+  - A flag to indicate whether the game has ended.
+  - It is set to true when the game is over
 
 - **Methods**:
-  - `void InitializeBoard()`: Initializes the game grid.
-  - `void DrawBoard()`: Draws the game grid and the current state of the tetrominoes.
-  - `void Input()`: Handles user input for controlling the tetromino.
-  - `void Update()`: Updates the game state, moves the tetromino down, checks for collisions.
-  - `void PlacePiece()`: Places the tetromino on the board and starts a new piece.
-  - `void RemoveFullLines()`: Removes completed lines and updates the score.
-  - `void Run()`: The main game loop that repeatedly handles input, updates the game state, and draws the board.
+  1. `void InitializeBoard()`: 
+  - This method initializes the game grid, board[20][10], by setting all the cells to a blank character ' '.
+  - This prepares the grid for the game to start by clearing any previous pieces that might still be on the board.
+  2. `void DrawBoard()`: 
+  - Draws the game grid and the current state of the tetrominoes.
+  - The method uses color codes (like ANSI_COLOR_BLUE, ANSI_COLOR_RED, etc.) to color each Tetromino differently when drawing the board.
+  3. `void Input()`: 
+  - Handles user input for controlling the tetromino.
+  - It listens for specific key presses, such as arrow keys for moving the piece left, right, or down, and a key (like 'A' or 'Space') for rotating or dropping the piece.
+  4. `void Update()`:
+  - Updates the game state, moves the tetromino down, checks for collisions.
+  - It also moves the current piece down the grid by one step.
+  5. `void PlacePiece()`: 
+  - Places the tetromino on the board and starts a new piece.
+  - It also creates a new piece to begin falling from the top of the grid
+  6. `void RemoveFullLines()`: Removes completed lines and updates the score.
+  7. `void Run()`: 
+  - The main game loop that repeatedly handles input, updates the game state, and draws the board.
+  - It listens for player input, moves the pieces, checks for collisions, clears lines, and draws the updated board to the screen, effectively making the game run continuously until gameOver is true.
+
 
 ## Code Structure and Flow
 
@@ -126,5 +147,32 @@ The game is displayed in the console using ASCII characters:
 
 6. **Game Speed**:
    - The game speed increases as the player progresses, making the tetrominoes fall faster as the score increases.
+## Improvements and Features to Add
+## Improvements and Features to Add
 
+1. **Harder Levels**: The game now gets progressively harder as the speed increases.
+Instead of always clearing one row, the game will now clear 1 to 2 rows randomly, making it more challenging.
+
+2. **Sound Effects**: Added sound effects for:
+Moving pieces
+Rotating pieces
+Line clears
+Hard drops
+Game over
+This makes the game more immersive.
+
+3. **Multiplayer Mode**:Players can now compete against each other in real-time.
+The game supports network-based multiplayer using sockets.
+
+4. **Mechanics include**:Sending garbage lines to the opponent when clearing multiple lines.
+The first player to fill their board loses.
+
+---
+## Conclusion
+
+this Tetris game is a good example of organizing a program using classes and objects. It makes it easy to manage different parts of the game, like the pieces and the board. Although the game works well, it could be improved by using inheritance (so pieces can be more flexible) and polymorphism (to make the code even cleaner). Overall, the game follows object-oriented principles, making it easier to maintain and extend in the future 
+
+## License
+
+This project is open source. Feel free to modify and distribute it as you like.
 
