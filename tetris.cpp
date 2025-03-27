@@ -31,13 +31,13 @@ private:
     struct Tetromino {
         std::vector<Point> shape;
         char symbol;
-        int color;
 
         void Rotate() {
             for (auto &p : shape) {
                 int temp = p.x;
                 p.x = -p.y;
                 p.y = temp;
+                p.x++;
             }
         }
     };
@@ -65,27 +65,22 @@ private:
             case 0: 
                 t.shape = { {0, 0}, {1, 0}, {0, 1}, {1, 1} };
                 t.symbol = 'O';
-
                 break; 
             case 1: 
                 t.shape = { {0, 0}, {1, 0}, {2, 0}, {3, 0} };
                 t.symbol = 'I';
-            
                 break; 
             case 2: 
                 t.shape = { {0, 0}, {1, 0}, {2, 0}, {1, 1} };
                 t.symbol = 'T';
-
                 break; 
             case 3: 
                 t.shape = { {0, 0}, {1, 0}, {1, 1}, {2, 1} };
                 t.symbol = 'S';
-
                 break; 
             case 4: 
                 t.shape = { {0, 1}, {1, 1}, {1, 0}, {2, 0} };
                 t.symbol = 'Z';
-
                 break; 
             case 5: 
                 t.shape = { {0, 0}, {0, 1}, {1, 1}, {2, 1} };
@@ -94,7 +89,6 @@ private:
             case 6: 
                 t.shape = { {0, 1}, {1, 1}, {2, 1}, {2, 0} };
                 t.symbol = 'J';
-
                 break; 
         }
         return t;
